@@ -17,7 +17,7 @@ they can utilize and test.
 ## Installation and setup
 
 To install, grab the pre-compiled jar from
-the  [Github Releases section](https://github.com/ZombieStriker/verticality/releases).
+the  [GitHub Releases section](https://github.com/ZombieStriker/verticality/releases).
 
 Drag and drop the server jar file into its own directory (which will be the directory the server will use to store all
 datafiles for the server). From there,
