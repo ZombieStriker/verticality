@@ -1,11 +1,17 @@
 package me.zombie_striker.verticality.event;
 
-import me.zombie_striker.verticality.Verticality;
+import me.zombie_striker.verticality.VerticalityCore;
 import net.minestom.server.event.EventListener;
 import net.minestom.server.event.instance.InstanceChunkUnloadEvent;
 import org.jetbrains.annotations.NotNull;
 
 public class ChunkUnloadListener implements EventListener<InstanceChunkUnloadEvent> {
+    private final VerticalityCore core;
+
+    public ChunkUnloadListener(VerticalityCore verticalityCore) {
+        this.core = verticalityCore;
+    }
+
     @Override
     public @NotNull Class<InstanceChunkUnloadEvent> eventType() {
         return InstanceChunkUnloadEvent.class;
@@ -13,7 +19,7 @@ public class ChunkUnloadListener implements EventListener<InstanceChunkUnloadEve
 
     @Override
     public @NotNull Result run(@NotNull InstanceChunkUnloadEvent event) {
-        Verticality.getVerticalityCore().getInstanceManager().removeChunkFromPopulateSet(event.getChunk().getIdentifier());
+        core.getInstanceManager().removeChunkFromPopulateSet(event.getChunk().getIdentifier());
         return Result.SUCCESS;
     }
 }
